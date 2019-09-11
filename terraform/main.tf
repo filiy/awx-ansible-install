@@ -54,7 +54,6 @@ resource "google_compute_instance" "awx01" {
       "sudo git remote add origin https://github.com/marc-leblanc/awx-ansible-install.git",
       "sudo git pull ${var.github_repo}",
       "sudo cd prep-awx",
-      "sudo ansible-playbook ${var.ansible_playbook}"
     ]
 
   }
