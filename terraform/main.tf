@@ -32,6 +32,7 @@ resource "google_compute_instance" "awx01" {
   // Add the public key defined in main.tf as a meta tag 
   metadata {
      ssh-keys = "${var.ssh_user}:${var.ssh_key_pub}"
+     project = "lab"
   }
 
   // Remote Exec provisioner is used to bootstrap the instance with GIT/Ansible and run 
