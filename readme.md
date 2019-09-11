@@ -40,3 +40,5 @@ Update 02-16-2019: Added terraform for the initial provisioning. Currently has s
 Update 02-7-2019: Works in current form, need to break out static assignments of values to variables ie login password/Start replacing bash script with Terraform
 
 Update 01-27-2019: Debugging issue with pre-load data task
+
+..
