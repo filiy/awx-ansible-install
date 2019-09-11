@@ -48,7 +48,7 @@ resource "google_compute_instance" "awx01" {
     }
     inline = [
 
-      "sudo yum -y httpd",
+      "sudo yum install httpd -y",
       "sudo systemctl start httpd",
       "sudo systemctl enable httpd",
       "sudo firewall-cmd --add-port=80/tcp"
