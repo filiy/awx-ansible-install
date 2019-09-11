@@ -33,6 +33,7 @@ resource "google_compute_instance" "awx01" {
   metadata {
      ssh-keys = "${var.ssh_user}:${var.ssh_key_pub}"
      project = "lab"
+     owner = "phil"
   }
 
   // Remote Exec provisioner is used to bootstrap the instance with GIT/Ansible and run 
