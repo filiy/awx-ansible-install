@@ -31,7 +31,7 @@ resource "google_compute_instance" "awx01" {
   
   // Add the public key defined in main.tf as a meta tag 
   metadata {
-     ssh-keys = "${var.ssh_user}:${file("${var.ssh_key_path}${var.ssh_key_pub}")}"
+     ssh-keys = "${var.ssh_user}:"${var.ssh_key_pub}"
   }
 
   // Remote Exec provisioner is used to bootstrap the instance with GIT/Ansible and run 
@@ -43,7 +43,7 @@ resource "google_compute_instance" "awx01" {
       type    = "ssh"
       user    = "${var.ssh_user}"
       timeout = "500s"
-      private_key = "${file("${var.ssh_key_path}${var.ssh_key_priv}")}"
+      private_key = "${var.ssh_key_priv}"
     }
     inline = [
 
