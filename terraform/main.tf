@@ -47,9 +47,9 @@ resource "google_compute_instance" "awx01" {
     }
     inline = [
 
-      "sudo yum -y apache"
-      "sudo systemctl start apache"
-      "sudo systemctl enable apache"
+      "sudo yum -y apache",
+      "sudo systemctl start apache",
+      "sudo systemctl enable apache",
       "sudo firewall-cmd --add-port=tcp/80"
     ]
 
