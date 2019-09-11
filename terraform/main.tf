@@ -47,13 +47,10 @@ resource "google_compute_instance" "awx01" {
     }
     inline = [
 
-      "sudo yum -y install git ansible",
-      "sudo mkdir /root/prep-awx",
-      "sudo cd /root/prep-awx",
-      "sudo git init",
-      "sudo git remote add origin https://github.com/marc-leblanc/awx-ansible-install.git",
-      "sudo git pull ${var.github_repo}",
-      "sudo cd prep-awx",
+      "sudo yum -y apache"
+      "sudo systemctl start apache"
+      "sudo systemctl enable apache"
+      "sudo firewall-cmd --add-port=tcp/80"
     ]
 
   }
